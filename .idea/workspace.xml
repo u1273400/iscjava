@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3afa6d1d-af88-4e80-b778-5b7216887ad6" name="Default Changelist" comment="javanotes05">
-      <change afterPath="$PROJECT_DIR$/BasicSample/app/src/main/java/iscnotes/LoanCalc.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BasicSample/app/src/main/java/iscnotes/LoanCalc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BasicSample/app/src/main/java/sample/HelloWorldExample.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicSample/app/src/main/java/iscnotes/Control.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BasicSample/app/src/main/java/iscnotes/Selection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +81,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
