@@ -1,5 +1,6 @@
 package gui;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 
 public class BasicButton{
 
@@ -8,6 +9,13 @@ public class BasicButton{
         frame.setSize(400,300);
         frame.setResizable(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //creating a button
+        JButton b=new JButton("Just a button");
+
+        //add button to frame
+        frame.getContentPane().add(b);
+
         frame.setVisible(true);
     }
     public static void main(String ar[]){
