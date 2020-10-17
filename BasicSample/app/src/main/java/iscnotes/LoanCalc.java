@@ -12,6 +12,8 @@ public class LoanCalc{
       this.amount=a;
       this.yrs=y;
     }
+    
+    
 
     public double ammortize() {
         double r=rate/(100*12);
