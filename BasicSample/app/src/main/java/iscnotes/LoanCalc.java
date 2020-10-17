@@ -10,11 +10,7 @@ public class LoanCalc{
     public LoanCalc(int y,double r, double a){
       this.rate=r;
       this.amount=a;
-<<<<<<< HEAD
-      this. yrs=y;
-=======
       this.yrs=y;
->>>>>>> branch 'main' of https://github.com/u1273400/iscjava.git
     }
     
     
