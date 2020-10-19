@@ -4,8 +4,11 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
+import java.awt.events.ActionListener;
 
-public class SimpleCalc extends JFrame{
+public class SimpleCalc extends JFrame implements ActionListener{
+
+    private JTextField display;
 
     public SimpleCalc(){
 
@@ -16,13 +19,65 @@ public class SimpleCalc extends JFrame{
         JPanel buttons=this.createButtonGrid();
 
         //creating a button
-        JTextField display=new JTextField("0",10);
+        display=new JTextField("0",20);
 
         //add contents and show frame
         getContentPane().add(buttons,BorderLayout.CENTER);
         getContentPane().add(display,BorderLayout.NORTH);
         pack();
         setVisible(true);
+    }
+
+    void actionPerformed(ActionEvent evt){
+        String op=evt.getActionCommand();
+        switch(op){
+            case "0":
+                break;
+            case "1":
+                break;
+            case "2":
+                break;
+            case "3":
+                break;
+            case "4":
+                break;
+            case "5":
+                break;
+            case "6":
+                break;
+            case "7":
+                break;
+            case "8":
+                break;
+            case "9":
+                break;
+            case ".":
+                break;
+            case "=":
+                break;
+            case "+":
+                break;
+            case "-":
+                break;
+            case "/":
+                if(display.getText().equals("0")){
+                    display.setText("div zero err")
+                }
+
+                break;
+            case "x":
+                break;
+            case "AC":
+                break;
+            case "C":
+                break;
+            case "M+":
+                break;
+            case "+/-":
+                break;
+            default:
+                break;
+        }
     }
 
     private JPanel createButtonGrid(){
