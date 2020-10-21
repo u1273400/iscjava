@@ -1,4 +1,4 @@
-//package sample;
+package sample;
 
 /**
  * Java Hello World example.
