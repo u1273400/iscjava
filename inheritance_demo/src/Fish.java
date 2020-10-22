@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Fish {
+
+public class Fish extends Animal {
+    public void swim(){}
 }

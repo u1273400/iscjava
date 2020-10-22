@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Zebra {
+public class Zebra extends Animal {
+    boolean isWild;
+    public void run(){}
 }
