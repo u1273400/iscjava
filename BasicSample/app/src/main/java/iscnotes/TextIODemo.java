@@ -20,7 +20,7 @@ public class TextIODemo{
   public static void main (String[] a){
     System.out.print("Enter the first value: ");
     float x=TextIO.getlnFloat();
-    System.out.print("Enter the first value: ");
+    System.out.print("Enter the second value: ");
     float y=TextIO.getlnFloat();
     System.out.println( x+"+"+y+"="+add(x,y) ); //
     System.out.println( x+"-"+y+"="+sub(x,y) ); //
@@ -28,3 +28,7 @@ public class TextIODemo{
     System.out.println( x+"/"+y+"="+div(x,y) ); //
   }
 }
+
+
+
+
