@@ -1,5 +1,5 @@
 public class BankCard {
-    String pin;
+    String pin="";
 
     public void setPin(String p){
         this.pin=p;
