@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3afa6d1d-af88-4e80-b778-5b7216887ad6" name="Default Changelist" comment="javanotes05">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/posdemo/src/BankCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/posdemo/src/BankCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
