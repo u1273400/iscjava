@@ -26,7 +26,7 @@ public class LoanCalc{
   public static void main(String ar[]){
     //t5 Scanner s=new Scanner(System.in);
     System.out.println("Enter years=7:");
-    int y=TextIO.getlnInt();int r=3;double a=10000;
+    int y=TextIO.getInt();int r=3;double a=10000;
     LoanCalc carloan=new LoanCalc(y,r,a);
     double p=carloan.ammortize();
     System.out.println(String.format("monthly payments on %3.2f for %dyrs at %d%% is %3.2f",a,y,r,p));
