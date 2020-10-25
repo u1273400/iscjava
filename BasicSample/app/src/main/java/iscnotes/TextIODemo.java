@@ -1,4 +1,6 @@
+package iscnotes;
 
+import io.TextIO;
 public class TextIODemo{
 
   public static float add(float a, float b){

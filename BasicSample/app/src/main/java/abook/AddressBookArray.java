@@ -33,7 +33,7 @@ private Entry findEntry(String name){
             return addressBook[i];
         }
     }
-    System.out.println(" Not found! ";
+    System.out.println(" Not found! ");
     return null;
 }
 private void deleteEntry(String name){
@@ -44,7 +44,7 @@ private void deleteEntry(String name){
             return;
         }
     }
-    System.out.println(" Not found! ";
+    System.out.println(" Not found! ");
     return;
 }
 
