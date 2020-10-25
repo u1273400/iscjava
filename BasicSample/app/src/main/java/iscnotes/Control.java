@@ -8,7 +8,7 @@ public class Control{
             for(int j=0;j<width;j++){
                 System.out.print("*");
             }
-            system.out.println("\n");
+            System.out.println("\n");
         }
     }
 }

@@ -4,7 +4,8 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
-import java.awt.events.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class SimpleCalc extends JFrame implements ActionListener{
 
@@ -61,7 +62,7 @@ public class SimpleCalc extends JFrame implements ActionListener{
                 break;
             case "/":
                 if(display.getText().equals("0")){
-                    display.setText("div zero err")
+                    display.setText("div zero err");
                 }
 
                 break;

@@ -2,7 +2,7 @@ package abook;
 
 
 public class AddressBookArray {
-private Entry[] addressBook= new Entry[3];
+public Entry[] addressBook= new Entry[3];
 
 public void ListAll(){
     for(int i=0;i<addressBook.length;i++){
@@ -15,9 +15,8 @@ public void ListAll(){
 private void addEntry(Entry entry){
     for(int i=0;i<addressBook.length;i++){
         if(addressBook[i]==null){
-            addressBook[i]=new Entry();
-            addressBook[i].entryName=entry.entryName;
-            addressBook[i].phoneNumber=entry.phoneNumber;
+            addressBook[i]=new Entry(entry.entryName,
+                    entry.phoneNumber);
             System.out.println(" Entry successful!");
             return;
         }
