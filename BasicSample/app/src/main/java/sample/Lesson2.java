@@ -33,13 +33,13 @@ public class Lesson2 {
                 }
             }
         }
-        System.out.println("==== ++++ GAME SUMMARY ++++ ====");
+        System.out.println("==== ++++ **** GAME SUMMARY **** ++++ ====");
         float sum=0;
         for(int i=0;i<rounds;i++){
             System.out.println(String.format("In round %d you guessed it right after %d attempts",i+1,round[i]));
             sum+=round[i]; //sum=sum+round[i]
         }
-        System.out.println(String.format("Average number of number of guesses per round=%d",sum/rounds));
+        System.out.println(String.format("Average number of number of guesses per round=%3.2f",sum/rounds));
     }
 
 
