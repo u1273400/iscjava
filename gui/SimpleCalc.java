@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -33,27 +34,27 @@ public class SimpleCalc extends JFrame implements ActionListener{
     private JPanel createButtonGrid(){
         JPanel buttons=new JPanel();
         buttons.setLayout(new GridLayout(5,4));
-        buttons.add(new Button("1"));
-        buttons.add(new Button("2"));
-        buttons.add(new Button("3"));
-        buttons.add(new Button("4"));
-        buttons.add(new Button("5"));
-        buttons.add(new Button("6"));
-        buttons.add(new Button("7"));
-        buttons.add(new Button("8"));
-        buttons.add(new Button("9"));
-        buttons.add(new Button("0"));
-        buttons.add(new Button("A/C"));
-        buttons.add(new Button("C"));
-        buttons.add(new Button("M+"));
-        buttons.add(new Button("+"));
-        buttons.add(new Button("-"));
-        buttons.add(new Button("/"));
-        buttons.add(new Button("x"));
-        buttons.add(new Button("+/-"));
-        buttons.add(new Button("="));
-        buttons.add(new Button("."));
-        buttons.add(new Button("1"));
+        buttons.add(new JButton("1"));
+        buttons.add(new JButton("2"));
+        buttons.add(new JButton("3"));
+        buttons.add(new JButton("4"));
+        buttons.add(new JButton("5"));
+        buttons.add(new JButton("6"));
+        buttons.add(new JButton("7"));
+        buttons.add(new JButton("8"));
+        buttons.add(new JButton("9"));
+        buttons.add(new JButton("0"));
+        buttons.add(new JButton("A/C"));
+        buttons.add(new JButton("C"));
+        buttons.add(new JButton("M+"));
+        buttons.add(new JButton("+"));
+        buttons.add(new JButton("-"));
+        buttons.add(new JButton("/"));
+        buttons.add(new JButton("x"));
+        buttons.add(new JButton("+/-"));
+        buttons.add(new JButton("="));
+        buttons.add(new JButton("."));
+        // buttons.add(new JButton("1"));
         return buttons;
     }
 
