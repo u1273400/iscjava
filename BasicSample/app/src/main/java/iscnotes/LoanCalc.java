@@ -1,5 +1,8 @@
-  //package iscnotes;
+ 
+package iscnotes;
+
 import java.util.Scanner;
+import io.TextIO;
 
 public class LoanCalc{
 
