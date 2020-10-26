@@ -5,7 +5,7 @@ import io.TextIO;
 public class Lesson2 {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the guessing game!");
+        System.out.println("Let's play the guessing game!");
         System.out.print("How many times will you play: ");
         int rounds=TextIO.getlnInt();
         System.out.println(String.format("You will be playing %d times",rounds));

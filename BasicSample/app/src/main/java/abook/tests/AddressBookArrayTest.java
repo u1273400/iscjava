@@ -1,10 +1,26 @@
 import abook.AddressBookArray;
+import org.junit.BeforeClass;
 import org.junit.Test;
-//import abook;
+import abook.Entry;
 import static org.junit.Assert.*;
 
 public class AddressBookArrayTest {
     abook.AddressBookArray adbook=new AddressBookArray();
+    Entry[] e3={
+        new Entry("Mark","080555"),
+        new Entry("Owen","080565"),
+        new Entry("Shaw","080577"),
+    };
+    Entry[] e4={
+        new Entry("Mark","080555"),
+        new Entry("Owen","080565"),
+        new Entry("Shaw","080577"),
+        new Entry("Aardat","080477"),
+    };
+
+    @BeforeClass
+    public static void beforeClass() throws Exception {
+    }
 
     private int getSize(){
         int getSize=0;
@@ -16,22 +32,23 @@ public class AddressBookArrayTest {
 
     @Test
     public void testAddEntry() {
-        //setup
+        //activate
         System.out.println("abook size="+getSize());
         //assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
         //act
-        abook.Entry[] e={
-                new abook.Entry("Mark","080555"),
-                new abook.Entry("Owen","080565"),
-                new abook.Entry("Shaw","080577"),
-        };
-
-        for(abook.Entry entry:e) adbook.addEntry(entry);
+        for(abook.Entry entry:e3) adbook.addEntry(entry);
         //assert
         assertEquals(3,getSize());
     }
 
-    @Test
+    @Test //(expected = IndexOutOfBoundsException.class)
     public void testOverflow() {
+        //setup
+        System.out.println("abook size="+getSize());
+        //assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
+        //act
+        for(Entry entry:e4) adbook.addEntry(entry);
+        //assert
+        assertEquals(e4.length,getSize()+1);
     }
 }
