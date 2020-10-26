@@ -2,49 +2,52 @@ package abook;
 
 
 public class AddressBookArray {
-public Entry[] addressBook= new Entry[3];
+    public Entry[] addressBook = new Entry[3];
 
-public void ListAll(){
-    for(int i=0;i<addressBook.length;i++){
-        if(addressBook[i]!=null){
-            System.out.print(" Name:\t"+addressBook[i].entryName);
-            System.out.println(" Phone: "+addressBook[i].phoneNumber);
+    public void ListAll() {
+        for (int i = 0; i < addressBook.length; i++) {
+            if (addressBook[i] != null) {
+                System.out.print(" Name:\t" + addressBook[i].entryName);
+                System.out.println(" Phone: " + addressBook[i].phoneNumber);
+            }
         }
     }
-}
-private void addEntry(Entry entry){
-    for(int i=0;i<addressBook.length;i++){
-        if(addressBook[i]==null){
-            addressBook[i]=new Entry(entry.entryName,
-                    entry.phoneNumber);
-            System.out.println(" Entry successful!");
-            return;
+
+    public void addEntry(Entry entry) {
+        for (int i = 0; i < addressBook.length; i++) {
+            if (addressBook[i] == null) {
+                addressBook[i] = new Entry(entry.entryName,
+                        entry.phoneNumber);
+                System.out.println(" Entry successful!");
+                return;
+            }
         }
+        System.out.println(" No room found for entry!");
     }
-    System.out.println(" No room found for entry!");
-}
-private Entry findEntry(String name){
-    for(int i=0;i<addressBook.length;i++){
-        if(addressBook[i]!=null && addressBook[i].entryName.equals(name)){
-            System.out.println(" Found! ");
-            System.out.print(" Name:\t"+addressBook[i].entryName);
-            System.out.println(" Phone: "+addressBook[i].phoneNumber);
-            return addressBook[i];
+
+    public Entry findEntry(String name) {
+        for (int i = 0; i < addressBook.length; i++) {
+            if (addressBook[i] != null && addressBook[i].entryName.equals(name)) {
+                System.out.println(" Found! ");
+                System.out.print(" Name:\t" + addressBook[i].entryName);
+                System.out.println(" Phone: " + addressBook[i].phoneNumber);
+                return addressBook[i];
+            }
         }
+        System.out.println(" Not found! ");
+        return null;
     }
-    System.out.println(" Not found! ");
-    return null;
-}
-private void deleteEntry(String name){
-    for(int i=0;i<addressBook.length;i++){
-        if(addressBook[i]!=null && addressBook[i].entryName.equals(name)){
-            System.out.println(" Found and deleted! ");
-            addressBook[i]=null;
-            return;
+
+    public void deleteEntry(String name) {
+        for (int i = 0; i < addressBook.length; i++) {
+            if (addressBook[i] != null && addressBook[i].entryName.equals(name)) {
+                System.out.println(" Found and deleted! ");
+                addressBook[i] = null;
+                return;
+            }
         }
+        System.out.println(" Not found! ");
+        return;
     }
-    System.out.println(" Not found! ");
-    return;
-}
 
 }

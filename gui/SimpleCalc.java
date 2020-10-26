@@ -29,7 +29,7 @@ public class SimpleCalc extends JFrame implements ActionListener{
         setVisible(true);
     }
 
-    void actionPerformed(ActionEvent evt){
+    public void actionPerformed(ActionEvent evt){
         String op=evt.getActionCommand();
         switch(op){
             case "0":

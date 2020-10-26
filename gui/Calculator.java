@@ -10,15 +10,34 @@ public class Calculator{
   }
 
   private void add(double x){
-    setVal(getVal()+x);
+    setVal(""+(getValue()+x));
+  }
+
+  private Double getValue() {
+    return Double.parseDouble(getVal());
   }
 
   private void div(double x){
     try{
-      setVal(getVal()/x);
+      setVal(""+(getValue()/x));
     } catch(Exception e){
       System.out.println(e.getMessage());
     };
   }
 
+  public String getVal() {
+    return val;
+  }
+
+  public void setVal(String val) {
+    this.val = val;
+  }
+
+  public String getAcc() {
+    return acc;
+  }
+
+  public void setAcc(String acc) {
+    this.acc = acc;
+  }
 }
