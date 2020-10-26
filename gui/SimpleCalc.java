@@ -81,16 +81,6 @@ public class SimpleCalc extends JFrame implements ActionListener{
         }
     }
 
-    private JPanel createButtonGrid(){
-        JPanel buttons=new JPanel();
-        return buttons;
-    }
-
-    private void initFrame(){
-        setTitle("Using JFrame2");
-        setResizable(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
     public static void main(String ar[]){
         new SimpleCalc();
     }
