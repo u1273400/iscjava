@@ -29,6 +29,40 @@ public class SimpleCalc extends JFrame implements ActionListener{
         setVisible(true);
     }
 
+    
+    private JPanel createButtonGrid(){
+        JPanel buttons=new JPanel();
+        buttons.setLayout(new GridLayout(5,4));
+        buttons.add(new Button("1"));
+        buttons.add(new Button("2"));
+        buttons.add(new Button("3"));
+        buttons.add(new Button("4"));
+        buttons.add(new Button("5"));
+        buttons.add(new Button("6"));
+        buttons.add(new Button("7"));
+        buttons.add(new Button("8"));
+        buttons.add(new Button("9"));
+        buttons.add(new Button("0"));
+        buttons.add(new Button("A/C"));
+        buttons.add(new Button("C"));
+        buttons.add(new Button("M+"));
+        buttons.add(new Button("+"));
+        buttons.add(new Button("-"));
+        buttons.add(new Button("/"));
+        buttons.add(new Button("x"));
+        buttons.add(new Button("+/-"));
+        buttons.add(new Button("="));
+        buttons.add(new Button("."));
+        buttons.add(new Button("1"));
+        return buttons;
+    }
+
+    private void initFrame(){
+        setTitle("Using JFrame2");
+        setResizable(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
     public void actionPerformed(ActionEvent evt){
         String op=evt.getActionCommand();
         switch(op){
