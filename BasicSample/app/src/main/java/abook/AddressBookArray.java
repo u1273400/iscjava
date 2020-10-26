@@ -4,11 +4,11 @@ package abook;
 public class AddressBookArray {
     public Entry[] addressBook = new Entry[3];
 
-    public void ListAll() {
+    public void listAll() {
         for (int i = 0; i < addressBook.length; i++) {
             if (addressBook[i] != null) {
-                System.out.print(" Name:\t" + addressBook[i].entryName);
-                System.out.println(" Phone: " + addressBook[i].phoneNumber);
+                System.out.print(" Name: " + addressBook[i].entryName);
+                System.out.println("\tPhone: " + addressBook[i].phoneNumber);
             }
         }
     }
@@ -29,8 +29,8 @@ public class AddressBookArray {
         for (int i = 0; i < addressBook.length; i++) {
             if (addressBook[i] != null && addressBook[i].entryName.equals(name)) {
                 System.out.println(" Found! ");
-                System.out.print(" Name:\t" + addressBook[i].entryName);
-                System.out.println(" Phone: " + addressBook[i].phoneNumber);
+                System.out.print(" Name: " + addressBook[i].entryName);
+                System.out.println("\tPhone: " + addressBook[i].phoneNumber);
                 return addressBook[i];
             }
         }

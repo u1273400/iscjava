@@ -7,8 +7,8 @@ public class AddressBookList {
 
     public void ListAll(){
         for(Entry entry:addressBook){
-                System.out.print(" Name:\t"+ entry.entryName);
-                System.out.println("Phone: "+entry.phoneNumber);
+                System.out.print(" Name: "+ entry.entryName);
+                System.out.println("\tPhone: "+entry.phoneNumber);
             }
         }
 
@@ -20,8 +20,8 @@ public class AddressBookList {
         for(Entry entry:addressBook){
             if(entry.entryName.equals(name)){
                 System.out.println(" Found! ");
-                System.out.print(" Name:\t"+entry.entryName);
-                System.out.println("Phone: "+entry.phoneNumber);
+                System.out.print(" Name: "+entry.entryName);
+                System.out.println("\tPhone: "+entry.phoneNumber);
                 return entry;
             }
         }

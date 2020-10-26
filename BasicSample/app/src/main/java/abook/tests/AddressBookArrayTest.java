@@ -39,6 +39,7 @@ public class AddressBookArrayTest {
         for(abook.Entry entry:e3) adbook.addEntry(entry);
         //assert
         assertEquals(3,getSize());
+        adbook.listAll();
     }
 
     @Test //(expected = IndexOutOfBoundsException.class)
