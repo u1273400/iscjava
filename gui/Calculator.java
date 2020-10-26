@@ -46,9 +46,8 @@ public class Calculator{
             default:
                 break;
         }
-        return val;
     }
-    return op;
+    return val;
   }
 
   public void setOp(String op) {
@@ -59,7 +58,7 @@ public class Calculator{
 
   }
 
-  private void add(double x){
+  private void add(){
     setVal(""+(getValue()+x));
   }
 
@@ -67,7 +66,7 @@ public class Calculator{
     return Double.parseDouble(getVal());
   }
 
-  private void div(double x){
+  private void div(){
     try{
       setVal(""+(getValue()/x));
     } catch(Exception e){
