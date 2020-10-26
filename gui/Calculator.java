@@ -17,35 +17,38 @@ public class Calculator{
         setVal(v)
       }
     }catch (NumberFormatException){
-        switch(v){
-            case ".":
-              setOp(v)
-                break;
-            case "=":
-                break;
-            case "+":
-                break;
-            case "-":
-                break;
-            case "/":
-                if(display.getText().equals("0")){
-                    display.setText("div zero err");
-                }
-
-                break;
-            case "x":
-                break;
-            case "AC":
-                break;
-            case "C":
-                break;
-            case "M+":
-                break;
-            case "+/-":
-                break;
-            default:
-                break;
-        }
+      switch(v){
+        case ".":
+          if(reg){
+            setOp(v);
+          }else{
+            setVal(v)
+          }
+          break;
+        case "=":
+          break;
+        case "+":
+          break;
+        case "-":
+          break;
+        case "/":
+          if(display.getText().equals("0")){
+              display.setText("div zero err");
+          }
+          break;
+        case "x":
+          break;
+        case "AC":
+          break;
+        case "C":
+          break;
+        case "M+":
+          break;
+        case "+/-":
+          break;
+        default:
+          break;
+      }
     }
     return val;
   }
