@@ -30,7 +30,6 @@ public class SimpleCalc extends JFrame implements ActionListener{
         setVisible(true);
     }
 
-    
     private JPanel createButtonGrid(){
         JPanel buttons=new JPanel();
         buttons.setLayout(new GridLayout(5,4));
