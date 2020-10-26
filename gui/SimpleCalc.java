@@ -92,6 +92,7 @@ public class SimpleCalc extends JFrame implements ActionListener{
         setResizable(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
     public static void main(String ar[]){
         new SimpleCalc();
     }
