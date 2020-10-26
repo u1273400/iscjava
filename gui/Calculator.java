@@ -14,7 +14,7 @@ public class Calculator{
       if(reg){
         setOp(v);
       }else{
-        setVal(v)
+        setVal(v);
       }
     }catch (NumberFormatException){
       switch(v){

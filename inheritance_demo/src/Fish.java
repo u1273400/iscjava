@@ -1,4 +1,6 @@
 
 public class Fish extends Animal {
-    public void swim(){}
+    public void swim(){
+        System.out.print
+    }
 }
