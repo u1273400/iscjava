@@ -2,8 +2,58 @@ package gui;
 
 public class Calculator{
 
-  private String val="0";
+  private String val="";
   private String acc="0";
+  private String op="";
+  private String tempReg="";
+  private boolean reg=false;
+
+  public String calculate(String v) {
+    try{
+      int acc=Integer.parseInteger(v);
+      if(reg){
+        setOp(v);
+      }else{
+        setVal(v)
+      }
+    }catch (NumberFormatException){
+        switch(v){
+            case ".":
+              setOp(v)
+                break;
+            case "=":
+                break;
+            case "+":
+                break;
+            case "-":
+                break;
+            case "/":
+                if(display.getText().equals("0")){
+                    display.setText("div zero err");
+                }
+
+                break;
+            case "x":
+                break;
+            case "AC":
+                break;
+            case "C":
+                break;
+            case "M+":
+                break;
+            case "+/-":
+                break;
+            default:
+                break;
+        }
+        return val;
+    }
+    return op;
+  }
+
+  public void setOp(String op) {
+    this.op += op;
+  }
 
   public Calculator(){
 
@@ -30,7 +80,7 @@ public class Calculator{
   }
 
   public void setVal(String val) {
-    this.val = val;
+    this.val += val;
   }
 
   public String getAcc() {

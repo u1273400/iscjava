@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 public class SimpleCalc extends JFrame implements ActionListener{
 
     private JTextField display;
+    private Calculator calc=new Calculator()
 
     public SimpleCalc(){
 
@@ -22,7 +23,7 @@ public class SimpleCalc extends JFrame implements ActionListener{
 
         //creating a button
         display=new JTextField("0",20);
-
+        display.setEditable(false);
         //add contents and show frame
         getContentPane().add(buttons,BorderLayout.CENTER);
         getContentPane().add(display,BorderLayout.NORTH);
@@ -64,54 +65,7 @@ public class SimpleCalc extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent evt){
         String op=evt.getActionCommand();
-        switch(op){
-            case "0":
-                break;
-            case "1":
-                break;
-            case "2":
-                break;
-            case "3":
-                break;
-            case "4":
-                break;
-            case "5":
-                break;
-            case "6":
-                break;
-            case "7":
-                break;
-            case "8":
-                break;
-            case "9":
-                break;
-            case ".":
-                break;
-            case "=":
-                break;
-            case "+":
-                break;
-            case "-":
-                break;
-            case "/":
-                if(display.getText().equals("0")){
-                    display.setText("div zero err");
-                }
-
-                break;
-            case "x":
-                break;
-            case "AC":
-                break;
-            case "C":
-                break;
-            case "M+":
-                break;
-            case "+/-":
-                break;
-            default:
-                break;
-        }
+        display.setText(calc.Calculate(op));
     }
 
     public static void main(String ar[]){
