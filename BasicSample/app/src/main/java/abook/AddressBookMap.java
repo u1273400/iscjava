@@ -1,16 +1,18 @@
 package abook;
-
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 public class AddressBookMap {
 private HashMap<String,String> addressBook= new HashMap<String,String>();
 
 public void ListAll(){
-  Set<String> keys = map.keySet();     // The set of keys in the map.
+  Set<String> keys = addressBook.keySet();     // The set of keys in the map.
   Iterator<String> keyIter = keys.iterator();
   while (keyIter.hasNext()) {
      String key = keyIter.next();  // Get the next key.
-     Double value = map.get(key);  // Get the value for that key.
-     System.out.println( " Name:\t" + key + "PhoneNumber" + value + "" );
+     Entry value = new Entry(key,addressBook.get(key));  // Get the value for that key.
+     System.out.println( " Name: " + key + "\tPhoneNumber" + value.phoneNumber + "" );
   }
 }
 private void addEntry(Entry entry){
@@ -18,18 +20,18 @@ private void addEntry(Entry entry){
   System.out.println(" Entry successful!");
 }
 private Entry findEntry(String name){
-  Entry entry=addressBook.get(name);
-  if(entry.entryName!=null){
+  String entry=addressBook.get(name);
+  if(entry!=null){
     System.out.println(" Found! ");
-    System.out.print(" Name:\t"+entry.entryName);
-    System.out.println("Phone: "+entry.phoneNumber);
-    return entry;
+    System.out.print(" Name: "+name);
+    System.out.println("\tPhone: "+entry);
+    return new Entry(name,entry);
   }
-  System.out.println(" Not found! ";
+  System.out.println(" Not found! ");
   return null;
 }
 private void deleteEntry(String name){
-    addressBook.remove(entry);
+    addressBook.remove(name);
     System.out.println(" Deleted! ");
     return;
 }

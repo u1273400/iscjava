@@ -1,5 +1,8 @@
-  //package iscnotes;
+ 
+package iscnotes;
+
 import java.util.Scanner;
+import io.TextIO;
 
 public class LoanCalc{
 
@@ -46,7 +49,7 @@ public class LoanCalc{
   }
 
   public static void main(String ar[]){
-    Scanner s=new Scanner(System.in);
+    //t5 Scanner s=new Scanner(System.in);
     System.out.println("Enter years=7:");
     int y=7;int r=3;double a=10000;
     LoanCalc carloan=new LoanCalc(y,r,a);

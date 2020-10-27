@@ -8,6 +8,7 @@ public class CreateWindow{
         frame.setSize(400,300);
         frame.setResizable(true);
         frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     public static void main(String ar[]){
         new CreateWindow();

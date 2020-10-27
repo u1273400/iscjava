@@ -5,7 +5,7 @@ import io.TextIO;
 public class Lesson2 {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to the guessing game!");
+        System.out.println("Let's play the guessing game!");
         System.out.print("How many times will you play: ");
         int rounds=TextIO.getlnInt();
         System.out.println(String.format("You will be playing %d times",rounds));
@@ -24,6 +24,7 @@ public class Lesson2 {
                     return;
                 }
                 if(guess==num){
+                    System.out.println("Bingo!");
                     right=true;
                 }else if(num>guess){
                     System.out.println("The number is actually greater. Try again!");
@@ -32,13 +33,13 @@ public class Lesson2 {
                 }
             }
         }
-        System.out.println("====GAME SUMMARY====");
-        int sum=0;
+        System.out.println("==== ++++ **** GAME SUMMARY **** ++++ ====");
+        float sum=0;
         for(int i=0;i<rounds;i++){
-            System.out.println(String.format("In round %d you got it after %d guesses",i,round[i]));
+            System.out.println(String.format("In round %d you guessed it right after %d attempts",i+1,round[i]));
             sum+=round[i]; //sum=sum+round[i]
         }
-        System.out.println(String.format("Average number of number of guesses per round=%d",sum/rounds));
+        System.out.println(String.format("Average number of number of guesses per round=%3.2f",sum/rounds));
     }
 
 

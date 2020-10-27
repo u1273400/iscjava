@@ -5,8 +5,8 @@ import java.util.IllegalFormatException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+// import javax.swing.JFileChooser;
+// import javax.swing.JOptionPane;
 
 /**
  * TextIO provides a set of static methods for reading and writing text.  By default, it reads
@@ -141,51 +141,51 @@ public class TextIO {
         }
     }
 
-    /**
-     * Puts a GUI file-selection dialog box on the screen in which the user can select
-     * an input file.  If the user cancels the dialog instead of selecting a file, it is
-     * not considered an error, but the return value of the subroutine is false.
-     * If the user does select a file, but there is an error while trying to open the
-     * file, then an exception of type IllegalArgumentException is thrown.  Finally, if
-     * the user selects a file and it is successfully opened, then the return value of the
-     * subroutine is true, and  the input routines will read from the file, instead of 
-     * from standard input.   If the user cancels, or if any error occurs, then the
-     * previous input source is not changed.
-     * <p>NOTE: Calling this method starts a GUI user interface thread, which can continue
-     * to run even if the thread that runs the main program ends.  If you use this method
-     * in a non-GUI program, it might be necessary to call System.exit(0) at the end of the main() 
-     * routine to shut down the Java virtual machine completely.
-     */
-    public static boolean readUserSelectedFile() {
-        if (fileDialog == null)
-            fileDialog = new JFileChooser();
-        fileDialog.setDialogTitle("Select File for Input");
-        int option = fileDialog.showOpenDialog(null);
-        if (option != JFileChooser.APPROVE_OPTION)
-            return false;
-        File selectedFile = fileDialog.getSelectedFile();
-        BufferedReader newin;
-        try {
-            newin = new BufferedReader( new FileReader(selectedFile) );
-        }
-        catch (Exception e) {
-            throw new IllegalArgumentException("Can't open file \"" + selectedFile.getName() + "\" for input.\n"
-                             + "(Error :" + e + ")");
-        }
-        if (!readingStandardInput) { // close current file
-            try {
-                in.close();
-            }
-            catch (Exception e) {
-            }
-        }
-        emptyBuffer();  // Added November 2007
-        in = newin;
-        inputFileName = selectedFile.getName();
-        readingStandardInput = false;
-        inputErrorCount = 0;
-        return true;
-    }
+    // /**
+    //  * Puts a GUI file-selection dialog box on the screen in which the user can select
+    //  * an input file.  If the user cancels the dialog instead of selecting a file, it is
+    //  * not considered an error, but the return value of the subroutine is false.
+    //  * If the user does select a file, but there is an error while trying to open the
+    //  * file, then an exception of type IllegalArgumentException is thrown.  Finally, if
+    //  * the user selects a file and it is successfully opened, then the return value of the
+    //  * subroutine is true, and  the input routines will read from the file, instead of 
+    //  * from standard input.   If the user cancels, or if any error occurs, then the
+    //  * previous input source is not changed.
+    //  * <p>NOTE: Calling this method starts a GUI user interface thread, which can continue
+    //  * to run even if the thread that runs the main program ends.  If you use this method
+    //  * in a non-GUI program, it might be necessary to call System.exit(0) at the end of the main() 
+    //  * routine to shut down the Java virtual machine completely.
+    //  */
+    // public static boolean readUserSelectedFile() {
+    //     if (fileDialog == null)
+    //         fileDialog = new JFileChooser();
+    //     fileDialog.setDialogTitle("Select File for Input");
+    //     int option = fileDialog.showOpenDialog(null);
+    //     if (option != JFileChooser.APPROVE_OPTION)
+    //         return false;
+    //     File selectedFile = fileDialog.getSelectedFile();
+    //     BufferedReader newin;
+    //     try {
+    //         newin = new BufferedReader( new FileReader(selectedFile) );
+    //     }
+    //     catch (Exception e) {
+    //         throw new IllegalArgumentException("Can't open file \"" + selectedFile.getName() + "\" for input.\n"
+    //                          + "(Error :" + e + ")");
+    //     }
+    //     if (!readingStandardInput) { // close current file
+    //         try {
+    //             in.close();
+    //         }
+    //         catch (Exception e) {
+    //         }
+    //     }
+    //     emptyBuffer();  // Added November 2007
+    //     in = newin;
+    //     inputFileName = selectedFile.getName();
+    //     readingStandardInput = false;
+    //     inputErrorCount = 0;
+    //     return true;
+    // }
     
     /**
      * After this method is called, output will be written to standard output (as it 
@@ -288,49 +288,49 @@ public class TextIO {
      * to standard output.  If the user cancels, or if an error occurs, then the current
      * output destination is not changed.
      */
-    public static boolean writeUserSelectedFile() {
-        if (fileDialog == null)
-            fileDialog = new JFileChooser();
-        fileDialog.setDialogTitle("Select File for Output");
-        File selectedFile;
-        while (true) {
-            int option = fileDialog.showSaveDialog(null);
-            if (option != JFileChooser.APPROVE_OPTION)
-                return false;  // user canceled
-            selectedFile = fileDialog.getSelectedFile();
-            if (selectedFile.exists()) {
-                int response = JOptionPane.showConfirmDialog(null,
-                        "The file \"" + selectedFile.getName() + "\" already exists.  Do you want to replace it?",
-                        "Replace existing file?",
-                        JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-                if (response == JOptionPane.YES_OPTION)
-                    break;
-            }
-            else {
-                break;
-            }
-        }
-        PrintWriter newout;
-        try {
-            newout = new PrintWriter(new FileWriter(selectedFile));
-        }
-        catch (Exception e) {
-            throw new IllegalArgumentException("Can't open file \"" + selectedFile.getName() + "\" for output.\n"
-                             + "(Error :" + e + ")");
-        }
-        if (!writingStandardOutput) {
-            try {
-                out.close();
-            }
-            catch (Exception e) {
-            }
-        }
-        out = newout;
-        writingStandardOutput = false;
-        outputFileName = selectedFile.getName();
-        outputErrorCount = 0;
-        return true;
-    }
+    // public static boolean writeUserSelectedFile() {
+    //     if (fileDialog == null)
+    //         fileDialog = new JFileChooser();
+    //     fileDialog.setDialogTitle("Select File for Output");
+    //     File selectedFile;
+    //     while (true) {
+    //         int option = fileDialog.showSaveDialog(null);
+    //         if (option != JFileChooser.APPROVE_OPTION)
+    //             return false;  // user canceled
+    //         selectedFile = fileDialog.getSelectedFile();
+    //         if (selectedFile.exists()) {
+    //             int response = JOptionPane.showConfirmDialog(null,
+    //                     "The file \"" + selectedFile.getName() + "\" already exists.  Do you want to replace it?",
+    //                     "Replace existing file?",
+    //                     JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+    //             if (response == JOptionPane.YES_OPTION)
+    //                 break;
+    //         }
+    //         else {
+    //             break;
+    //         }
+    //     }
+    //     PrintWriter newout;
+    //     try {
+    //         newout = new PrintWriter(new FileWriter(selectedFile));
+    //     }
+    //     catch (Exception e) {
+    //         throw new IllegalArgumentException("Can't open file \"" + selectedFile.getName() + "\" for output.\n"
+    //                          + "(Error :" + e + ")");
+    //     }
+    //     if (!writingStandardOutput) {
+    //         try {
+    //             out.close();
+    //         }
+    //         catch (Exception e) {
+    //         }
+    //     }
+    //     out = newout;
+    //     writingStandardOutput = false;
+    //     outputFileName = selectedFile.getName();
+    //     outputErrorCount = 0;
+    //     return true;
+    // }
     
 
     /**
@@ -829,7 +829,7 @@ public class TextIO {
     private static String inputFileName;  // Name of file that is the current input source, or null if the source is not a file.
     private static String outputFileName; // Name of file that is the current output destination, or null if the destination is not a file.
     
-    private static JFileChooser fileDialog; // Dialog used by readUserSelectedFile() and writeUserSelectedFile()
+    // private static JFileChooser fileDialog; // Dialog used by readUserSelectedFile() and writeUserSelectedFile()
     
     private final static BufferedReader standardInput = new BufferedReader(new InputStreamReader(System.in));  // wraps standard input stream
     private final static PrintWriter standardOutput = new PrintWriter(System.out);  // wraps standard output stream
