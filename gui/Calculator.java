@@ -5,22 +5,30 @@ public class Calculator{
   private String val="";
   private String acc="0";
   private String op="";
-  private String tempReg="";
-  private boolean reg=false;
+  private String reg="";
+  private boolean tmpReg=false;
+
+  public double getReg() {
+    return Double.parseDouble(reg);
+  }
+
+  public void setReg(String reg) {
+    this.reg += reg;
+  }
 
   public String calculate(String v) {
     try{
       int acc=Integer.parseInteger(v);
-      if(reg){
-        setOp(v);
+      if(tmpReg){
+        setReg(v);
       }else{
         setVal(v);
       }
     }catch (NumberFormatException){
       switch(v){
         case ".":
-          if(reg){
-            setOp(v);
+          if(tmpReg){
+            setReg(v);
           }else{
             setVal(v)
           }
@@ -58,7 +66,7 @@ public class Calculator{
   }
 
   private void add(){
-    setVal(String.format("%10.10f",(getValue()+x)));
+    setVal(String.format("%10.10f",(getValue()+getReg())));
   }
 
   private Double getValue() {
@@ -67,7 +75,7 @@ public class Calculator{
 
   private void div(){
     try{
-      setVal(""+(getValue()/x));
+      setVal(String.format("%10.10f",(getValue()/getReg())));
     } catch(Exception e){
       System.out.println(e.getMessage());
     };
