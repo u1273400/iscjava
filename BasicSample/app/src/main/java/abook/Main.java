@@ -44,7 +44,7 @@ public class Main {
         assert e4.length==getSizeArray()+1 : "testArrayOverflow() fail!";
     }
 
-    public static void main (String args[]){
+    public static void main (String[] args){
       //testArrayAddEntry();
       testArrayOverflow();
     }
