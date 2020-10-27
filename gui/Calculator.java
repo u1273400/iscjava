@@ -18,47 +18,87 @@ public class Calculator{
 
   public String calculate(String v) {
     try{
-      int acc=Integer.parseInteger(v);
+      int acc=Integer.parseInt(v);
       if(tmpReg){
         setReg(v);
+        return reg;
       }else{
         setVal(v);
+        return val;
       }
-    }catch (NumberFormatException){
+    }catch (NumberFormatException nfe){
       switch(v){
         case ".":
-          if(tmpReg){
+          if(tmpReg && !reg.contains(v)){
             setReg(v);
+            return reg;
+          }else if(!val.contains(v)){
+            setVal(v);
+            return val;
           }else{
-            setVal(v)
+            return val;
           }
-          break;
         case "=":
-          break;
+          if(tmpReg){
+            doOp();
+            reg="";
+            op="";
+          }return val;
         case "+":
-          break;
-        case "-":
-          break;
         case "/":
-          if(display.getText().equals("0")){
-              display.setText("div zero err");
+          if(tmpReg){
+            doOp();
+            reg="";
+          }else{
+            reg="";
+            tmpReg=true;
           }
-          break;
-        case "x":
-          break;
-        case "AC":
+          setOp(v);
+          return val;
+        case "A/C":
+          reg="";
+          val="";
+          tmpReg=false;
           break;
         case "C":
-          break;
+          if(tmpReg){
+            reg="";
+          }else{
+            val="";
+          }
+          return "0";
         case "M+":
           break;
         case "+/-":
           break;
         default:
-          break;
+          if(tmpReg && reg.length()>0){
+            return reg;
+          }else if(val.length()>0){
+            return val;
+          }else
+            return "0";
       }
+      if(tmpReg && reg.length()>0){
+        return reg;
+      }else if(val.length()>0){
+        return val;
+      }else
+        return "0";
     }
-    return val;
+  }
+
+  private void doOp() {
+    switch(op){
+      case "+":
+        add();
+        break;
+      case "/":
+        div();
+        break;
+      default:
+        break;
+    }
   }
 
   public void setOp(String op) {
@@ -66,7 +106,7 @@ public class Calculator{
   }
 
   private void add(){
-    setVal(String.format("%10.10f",(getValue()+getReg())));
+    val=String.format("%10.10f",(getValue()+getReg()));
   }
 
   private Double getValue() {
@@ -75,7 +115,7 @@ public class Calculator{
 
   private void div(){
     try{
-      setVal(String.format("%10.10f",(getValue()/getReg())));
+      val=String.format("%10.10f",(getValue()/getReg()));
     } catch(Exception e){
       System.out.println(e.getMessage());
     };
