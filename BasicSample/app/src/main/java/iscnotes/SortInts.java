@@ -1,14 +1,20 @@
 package iscnotes;
 
 import java.util.List;
+import io.TextIO;
 import java.util.ArrayList;
 import java.util.ListIterator;
 
 public class SortInts {
     public static void main (String[] args){
         List<Integer> list=new ArrayList<Integer>();
-        sortedInsert(list,5);
-        sortedInsert(list,1);
+        System.out.print("Enter value (negative value quits loop): ");
+        int v=TextIO.getInt();
+        while(v>=0){
+            sortedInsert(list,v);
+            System.out.print("Enter value (negative value quits loop): ");
+            v=TextIO.getInt();
+        }
         for(Integer i:list){
             System.out.print(i+" ");
         }
