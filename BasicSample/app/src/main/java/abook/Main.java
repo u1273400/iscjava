@@ -27,18 +27,16 @@ public class Main {
     public static void testArrayAddEntry() {
         //activation
         System.out.println("abook size="+getSizeArray());
-        //assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
         //action
         for(Entry entry:e3) adbook.addEntry(entry);
         //assertion
-        assert 3==getSizeArray():"testAddEntry fail!";
+        assert 3==getSizeArray():"testAddEntry() fail!";
         adbook.listAll();
     }
 
     public static void testArrayOverflow() {
         //setup
         System.out.println("abook size="+getSizeArray());
-        //assertArrayEquals(new int[]{1,2,3},new int[]{1,2,3});
         //act
         for(Entry entry:e4) adbook.addEntry(entry);
         //assert
