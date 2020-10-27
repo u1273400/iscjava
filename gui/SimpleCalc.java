@@ -105,7 +105,7 @@ public class SimpleCalc extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent evt){
         String op=evt.getActionCommand();
-        display.setText(calc.Calculate(op));
+        display.setText(calc.calculate(op));
     }
 
     public static void main(String ar[]){
