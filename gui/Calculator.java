@@ -54,15 +54,11 @@ public class Calculator{
   }
 
   public void setOp(String op) {
-    this.op += op;
-  }
-
-  public Calculator(){
-
+    this.op = op;
   }
 
   private void add(){
-    setVal(""+(getValue()+x));
+    setVal(String.format("%10.10f",(getValue()+x)));
   }
 
   private Double getValue() {
