@@ -39,12 +39,13 @@ public class Main {
         System.out.println("abook size="+getSizeArray());
         //act
         for(Entry entry:e4) adbook.addEntry(entry);
+        System.out.println("abook size="+getSizeArray());
         //assert
         assert e4.length==getSizeArray()+1 : "testArrayOverflow() fail!";
     }
 
     public static void main (String args[]){
-      testArrayAddEntry();
-      //testArrayOverflow();
+      //testArrayAddEntry();
+      testArrayOverflow();
     }
 }
