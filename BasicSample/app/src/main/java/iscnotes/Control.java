@@ -2,13 +2,13 @@
 
 public class Control{
     public static void main(String []a){
-        int length;
-        int width;
+        int length=7;
+        int width=6;
         for(int i=0;i<length;i++){
             for(int j=0;j<width;j++){
                 System.out.print("*");
             }
-            system.out.println("\n");
+            System.out.println("\n");
         }
     }
 }
