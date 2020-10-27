@@ -106,7 +106,7 @@ public class Calculator{
   }
 
   private void add(){
-    val=String.format("%10.10f",(getValue()+getReg()));
+    val=String.format("%10.5f",(getValue()+getReg()));
   }
 
   private Double getValue() {
@@ -115,7 +115,7 @@ public class Calculator{
 
   private void div(){
     try{
-      val=String.format("%10.10f",(getValue()/getReg()));
+      val=String.format("%10.5f",(getValue()/getReg()));
     } catch(Exception e){
       System.out.println(e.getMessage());
     };
