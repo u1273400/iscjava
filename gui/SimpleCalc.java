@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class SimpleCalc extends JFrame implements ActionListener{
 
     private JTextField display;
-    private Calculator calc=new Calculator()
+    private Calculator calc=new Calculator();
 
     public SimpleCalc(){
 
@@ -33,27 +33,67 @@ public class SimpleCalc extends JFrame implements ActionListener{
 
     private JPanel createButtonGrid(){
         JPanel buttons=new JPanel();
+        JButton b;
         buttons.setLayout(new GridLayout(5,4));
-        buttons.add(new JButton("A/C"));
+
+        b=new JButton("A/C");
+        b.addActionListener(this);
+        buttons.add(b);
         buttons.add(new JButton("C"));
-        buttons.add(new JButton("M+"));
-        buttons.add(new JButton("+/-"));
-        buttons.add(new JButton("7"));
-        buttons.add(new JButton("8"));
-        buttons.add(new JButton("9"));
-        buttons.add(new JButton("x"));
-        buttons.add(new JButton("4"));
-        buttons.add(new JButton("5"));
-        buttons.add(new JButton("6"));
-        buttons.add(new JButton("/"));
-        buttons.add(new JButton("1"));
-        buttons.add(new JButton("2"));
-        buttons.add(new JButton("3"));
-        buttons.add(new JButton("-"));
-        buttons.add(new JButton("."));
-        buttons.add(new JButton("0"));
-        buttons.add(new JButton("="));
-        buttons.add(new JButton("+"));
+        b=new JButton("M+");
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("+/-"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("7"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("8"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("9"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("x"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("4"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("5"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("6"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b= new JButton("/");
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("1");
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("2");
+        b.addActionListener(this);
+        buttons.add(b);
+        b= new JButton("3");
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("-"); 
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton(".");
+        b.addActionListener(this);
+        buttons.add(b);
+        b= new JButton("0");
+        b.addActionListener(this);
+        buttons.add(b);
+        b= new JButton("=");
+        b.addActionListener(this);
+        buttons.add(b);
+        b=new JButton("+");
+        b.addActionListener(this);
+        buttons.add(b);
         return buttons;
     }
 
