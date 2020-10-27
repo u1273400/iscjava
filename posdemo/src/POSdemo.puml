@@ -1,0 +1,24 @@
+@startuml
+
+title Calculate() operation - Calculator Class 
+
+
+start
+
+:get Input; 
+note right: calculate(input)//parameter
+
+:object data members: val:String,reg:String,tmpReg:boolean, reg:String; 
+note left: declared at class level
+
+if (Turn On The Game?) then (yes)
+  :__Having Fun__!!!;
+else (no)
+  :Not Having Fun;
+endif
+
+:Go To Bed;
+
+stop
+
+@enduml
