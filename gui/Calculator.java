@@ -26,7 +26,7 @@ public class Calculator{
         return "0";   
     }
     try{
-      int acc=Integer.parseInt(v);
+      Integer.parseInt(v);
       if(tmpReg){
         setReg(v);
         return reg;
