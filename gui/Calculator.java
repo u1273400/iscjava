@@ -17,6 +17,14 @@ public class Calculator{
   }
 
   public String calculate(String v) {
+    if(reg.length()>15 || val.length()>15){
+      if(tmpReg && reg.length()>0){
+        return reg;
+      }else if(val.length()>0){
+        return val;
+      }else
+        return "0";   
+    }
     try{
       int acc=Integer.parseInt(v);
       if(tmpReg){
