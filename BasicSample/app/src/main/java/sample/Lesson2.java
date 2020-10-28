@@ -21,7 +21,7 @@ public class Lesson2 {
                 round[i]++; //same as round[i]=round[i]+1;
                 if(guess==-1){
                     System.out.println("Thank you for playing...Bye!");
-                    return;
+                    return;//System.exit(0);
                 }
                 if(guess==num){
                     System.out.println("Bingo!");

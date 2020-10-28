@@ -50,17 +50,20 @@ public class LoanCalc{
 
   public static void main(String ar[]){
     //t5 Scanner s=new Scanner(System.in);
-    System.out.println("Enter years=7:");
+    //System.out.println("Enter years=7:");
     int y=7;int r=3;double a=10000;
     LoanCalc carloan=new LoanCalc(y,r,a);
     double p=carloan.ammortize();
-    System.out.println(String.format("monthly payments on %3.2f for %dyrs at %d%% is %3.2f",a,y,r,p));
-//    y=7;r=4;a=9000;
-//    carloan=new LoanCalc(y,r,a);
-    carloan.setAmount(9000);
-    carloan.setRate(4);
-    carloan.setYrs(7);
-    p= carloan.ammortize();
-    System.out.println(String.format("monthly payments on %3.2f for %dyrs at %d%% is %3.2f",a,y,r,p));
+    System.out.println(carloan.getRate());
+    carloan.setRate(9);
+    System.out.println(carloan.getRate());
+//     System.out.println(String.format("monthly payments on %3.2f for %dyrs at %d%% is %3.2f",a,y,r,p));
+// //    y=7;r=4;a=9000;
+// //    carloan=new LoanCalc(y,r,a);
+//     carloan.setAmount(9000);
+//     carloan.setRate(4);
+//     carloan.setYrs(7);
+//     p= carloan.ammortize();
+//     System.out.println(String.format("monthly payments on %3.2f for %dyrs at %d%% is %3.2f",a,y,r,p));
   }
 }
