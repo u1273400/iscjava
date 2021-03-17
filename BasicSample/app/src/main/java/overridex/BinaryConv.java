@@ -6,6 +6,7 @@ public class BinaryConv {
     public BinaryConv(int v){
         this.val=v;
     }
+    
     protected String lookup(String num){
         String rv="";
         if(num.length()==3){
@@ -38,7 +39,16 @@ public class BinaryConv {
         return rv;
     }
 
-    public String convert(){//overriden by subclasses
-        return "";
+    public String convert(int num){//overriden by subclasses
+        int rem;
+        String s;
+        if (num<=1)
+        {
+            return num==1?"1":"0";
+        }
+        rem = num % 2;
+            s=convert(num /2);
+            s+=rem==1?"1":"0";
+        return s;    
     }
 }

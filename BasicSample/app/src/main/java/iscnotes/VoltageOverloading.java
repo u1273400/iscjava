@@ -33,7 +33,7 @@ public class VoltageOverloading {
       return res * curr;
     }
 
-    public static double getVoltage(double curr, int cap, double time ){
+    public static double getVoltage(double curr, double cap, double time ){
       return time * curr / cap;
     }
 }
