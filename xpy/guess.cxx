@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
 		while(!rightGuess){
 			cout << "Enter your guess between 0 and 100: ";cin>>guess;
 			if(number==-1)
+				cout << "Thank you for playing and have a nice day!\n";
 				return 0;
 			if(number==guess){
 				rightGuess=true;
