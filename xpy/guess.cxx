@@ -8,18 +8,19 @@ using std::cin;
 int main(int argc, char *argv[])
 {
 	cout << "Welcome to the guessing game" << endl;
-	cout << "===========================" << endl;
+	cout << "============================" << endl;
 	srand(time(NULL));
 	int rounds;
 	cout << "How many times would you like to play: ";
 	cin >> rounds;
 	int rguesses[rounds];
 	for(int round=0; round<rounds;round++){
-		cout << "Round " << round << " of " << rounds << endl;
+		cout << "Round " << (round+1) << " of " << rounds << endl;
 		bool rightGuess=false;
 		int guess, number=rand() % 101;
-		cout << "Enter your guess between 0 and 100 "  << endl;
+    rguesses[round]=0;
 		while(!rightGuess){
+			cout << "Enter your guess between 0 and 100: ";cin>>guess;
 			if(number==-1)
 				return 0;
 			if(number==guess){
@@ -33,5 +34,11 @@ int main(int argc, char *argv[])
 		}
 	}
 	cout << "\n========Game Summary=========" << endl;
+	int sum=0;
+	for(int i=0;i<rounds;i++){
+		cout << "For round " << (i+1) << ", You guessed right after " << rguesses[i] << " attempts\n";
+		sum+=rguesses[i];
+	}
+	cout << "Average guesses per round " << sum/rounds << " \n";
 	
 }
