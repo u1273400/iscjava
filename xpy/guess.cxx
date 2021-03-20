@@ -21,9 +21,10 @@ int main(int argc, char *argv[])
     rguesses[round]=0;
 		while(!rightGuess){
 			cout << "Enter your guess between 0 and 100: ";cin>>guess;
-			if(number==-1)
+			if(guess<0){
 				cout << "Thank you for playing and have a nice day!\n";
 				return 0;
+			}
 			if(number==guess){
 				rightGuess=true;
 			}else if(number<guess){
@@ -40,6 +41,6 @@ int main(int argc, char *argv[])
 		cout << "For round " << (i+1) << ", You guessed right after " << rguesses[i] << " attempts\n";
 		sum+=rguesses[i];
 	}
-	cout << "Average guesses per round " << sum/rounds << " \n";
+	cout << "Average guesses per round = " << sum/rounds << " \n";
 	
 }
